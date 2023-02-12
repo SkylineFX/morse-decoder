@@ -1,13 +1,14 @@
 import React from 'react'
 import TextInput from './TextInput'
-import { ToMorse, ToText } from './morse'
+import { ToMorse, ToText } from '../morse'
 
 class Translator extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {input: '', mode: 'text'};
+
     this.handleMorseChange = this.handleMorseChange.bind(this);
     this.handleTextChange = this.handleTextChange.bind(this);
-    this.state = {input: '', mode: 'text'};
   }
 
   handleTextChange(input) {

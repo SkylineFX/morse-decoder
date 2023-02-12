@@ -1,11 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import Header from './Header'
-import Translator from './Translator'
-import Dictionary from './Dictionary'
-import Notification from './Notification'
-import Clock from './Clock'
+import Header from './components/Header'
+import Translator from './components/Translator'
+import Alphabet from './components/Alphabet'
+import Clock from './components/Clock'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -14,8 +13,7 @@ root.render(
       <Header/>
       <main className='w-9/12 h-full pt-20 px-4'>
         <Translator/>
-        <Dictionary/>
-        <Notification/>
+        <Alphabet/>
       </main>
       <Clock/>
     </div>

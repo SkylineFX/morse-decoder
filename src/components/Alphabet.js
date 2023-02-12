@@ -1,8 +1,9 @@
 import React from 'react';
-import { textToMorse } from './morse'
+import { textToMorse } from '../morse'
 
 function Table(props) {
   if (!props.show) { return null; }
+
   const entries = Object.entries(textToMorse)
   const listItems = entries.map((pair) =>
     <div key={pair[0]} className='flex gap-2 outline outline-2 outline-[#2c2e2f] rounded-sm'>
@@ -10,6 +11,7 @@ function Table(props) {
       <div className='w-16 p-2 font-bold'>{pair[1]}</div>
     </div>
   );
+
   return (
     <div className='flex gap-4 flex-wrap'>{listItems}</div>
   );
@@ -19,6 +21,7 @@ class Dictionary extends React.Component {
   constructor(props) {
     super(props);
     this.state = {showTable: true};
+
     this.handleToggleClick = this.handleToggleClick.bind(this);
   }
 
