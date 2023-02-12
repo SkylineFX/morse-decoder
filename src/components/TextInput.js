@@ -27,7 +27,6 @@ class TextInput extends React.Component {
   }
 
   playSound() {
-    console.log("test");
   }
 
   render() {
