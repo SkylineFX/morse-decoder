@@ -22,7 +22,7 @@ class Translator extends React.Component {
     const mode = this.state.mode
     const input = this.state.input
 
-    const text = (mode === 'morse') ? ToText(input) : input
+    const text = (mode === 'morse') ? ToText(input) : input.toUpperCase()
     const morse = (mode === 'text') ? ToMorse(input) : input
 
     return (

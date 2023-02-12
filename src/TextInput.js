@@ -48,7 +48,7 @@ class TextInput extends React.Component {
           placeholder='Type something...' 
           value={text} 
           onChange={this.handleChange} 
-          className="w-full h-full rounded-md p-2 bg-[#2c2e2f] text-[#f2f4f5] outline-none mb-4 uppercase placeholder:normal-case resize-none"
+          className="w-full h-full rounded-md p-2 bg-[#2c2e2f] text-[#f2f4f5] outline-none mb-4 placeholder:normal-case resize-none"
         />
       </div>
     );

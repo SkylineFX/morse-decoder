@@ -1,4 +1,4 @@
-const textToMorse = {
+export const textToMorse = {
   A:".-", B:"-...", C:"-.-.", D:"-..", E:".", F:"..-.", 
   G:"--.", H:"....", I:"..", J:".---", K:"-.-", L:	".-..", 
   M:"--", N:"-.", O:"---", P:".--.", Q:"--.-", R:".-.", 
@@ -20,7 +20,7 @@ const morseToText = {
 
 export function ToMorse(text) {
   let morse = '';
-  text = text.trim().toUpperCase()
+  text = text.trim().toUpperCase().replace(/(\r\n|\n|\r)/gm, " ");
   for(let i = 0; i < text.length; i++)
   {
     if(textToMorse[text[i]])
