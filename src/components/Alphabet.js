@@ -7,8 +7,8 @@ function Table(props) {
   const entries = Object.entries(textToMorse)
   const listItems = entries.map((pair) =>
     <div key={pair[0]} className='flex gap-2 outline outline-2 outline-[#2c2e2f] rounded-sm'>
-      <div className='w-10 p-2 font-bold'>{pair[0]}</div>
-      <div className='w-16 p-2 font-bold'>{pair[1]}</div>
+      <div className='w-5 md:w-10 p-2 font-bold'>{pair[0]}</div>
+      <div className='w-14 md:w-16 p-2 font-bold'>{pair[1]}</div>
     </div>
   );
 
@@ -33,7 +33,7 @@ class Dictionary extends React.Component {
 
   render() {
     return (
-      <div className='mt-10'>
+      <div className='my-10'>
         <div onClick={this.handleToggleClick} className='flex items-center gap-2 mb-2 cursor-pointer'>
           <p className='text-lg font-bold'>
             Morse Alphabet 

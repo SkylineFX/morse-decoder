@@ -20,7 +20,7 @@ class Clock extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className='absolute bottom-0'>
         <h2 className='text-sm'>{this.state.date.toLocaleTimeString()}</h2>
       </div>
     );

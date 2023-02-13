@@ -9,9 +9,9 @@ import Clock from './components/Clock'
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <div className='bg-[#232526] text-[#e4e6e7] w-screen h-screen flex flex-col items-center'>
+    <div className='bg-[#232526] text-[#e4e6e7] w-screen min-h-screen flex flex-col items-center relative'>
       <Header/>
-      <main className='w-9/12 h-full pt-20 px-4'>
+      <main className='w-11/12 md:w-9/12 h-full pt-20 px-4'>
         <Translator/>
         <Alphabet/>
       </main>

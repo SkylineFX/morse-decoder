@@ -36,7 +36,7 @@ class TextInput extends React.Component {
     const show = this.state.showNotification
 
     return (
-      <div className='w-5/12 h-full flex flex-col'>
+      <div className='w-full xl:w-5/12 h-full flex flex-col'>
         <Notification text={text} show={show} onCloseNotification={this.toggleNotification}/>
         <div className='flex justify-between items-center mb-2'>
           <p className='text-lg font-bold capitalize select-none'>{mode}</p>

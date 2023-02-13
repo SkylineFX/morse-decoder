@@ -27,7 +27,7 @@ class Translator extends React.Component {
     const morse = (mode === 'text') ? ToMorse(input) : input
 
     return (
-      <div className='flex justify-between'>
+      <div className='flex flex-col items-center justify-between xl:flex-row'>
         <TextInput 
           mode="text" 
           input={text} 
