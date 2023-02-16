@@ -17,7 +17,7 @@ function Table(props) {
   );
 }
 
-class Dictionary extends React.Component {
+class Alphabet extends React.Component {
   constructor(props) {
     super(props);
     this.state = {showTable: true};
@@ -35,7 +35,7 @@ class Dictionary extends React.Component {
     return (
       <div className='my-10'>
         <div onClick={this.handleToggleClick} className='flex items-center gap-2 mb-2 cursor-pointer'>
-          <p className='text-lg font-bold'>
+          <p className='text-lg font-bold select-none'>
             Morse Alphabet 
           </p>
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style={{fill: "#f2f4f5"}}><path d="M16.293 9.293 12 13.586 7.707 9.293l-1.414 1.414L12 16.414l5.707-5.707z"></path></svg>
@@ -47,4 +47,4 @@ class Dictionary extends React.Component {
   }
 }
 
-export default Dictionary
+export default Alphabet

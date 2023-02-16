@@ -3,7 +3,6 @@ import React from "react";
 class Notification extends React.Component {
   constructor(props) {
     super(props);
-
     this.closeNotification = this.closeNotification.bind(this)
   }
 
@@ -16,7 +15,7 @@ class Notification extends React.Component {
 
     if(!this.props.show) return null
     return (
-      <div className="w-80 h-28 bg-[#2c2e2f] rounded-md absolute bottom-5 right-5">
+      <div className="w-60 h-24 md:w-80 md:h-28 bg-[#2c2e2f] rounded-md sticky md:absolute bottom-5 right-5">
         <div className="w-full h-full p-2 flex flex-col gap-3">
           <div className="w-full flex justify-between items-center">
             <div className="flex items-center gap-2">
