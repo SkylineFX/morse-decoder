@@ -38,7 +38,7 @@ class Translator extends React.Component {
     const notificationText = this.state.notificationText;
 
     return (
-      <div className='flex flex-col items-center justify-between xl:flex-row'>
+      <div className='flex flex-col gap-2 md:gap-0 items-center justify-between xl:flex-row'>
         <TextInput 
           mode="text" 
           input={text} 
