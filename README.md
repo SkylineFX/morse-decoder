@@ -1,3 +1,3 @@
 # Morse Decoder
 
-![](public\screenshot.png)
+![](/public/screenshot.png)
