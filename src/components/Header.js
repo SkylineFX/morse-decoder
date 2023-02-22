@@ -3,7 +3,7 @@ import React from "react";
 class Header extends React.Component {
   render() {
     return (
-      <header className='w-11/12 md:w-9/12 h-20 flex justify-between items-center'>
+      <header className='w-11/12 md:w-9/12 h-20 flex justify-between items-center mt-4'>
         <div className='h-full hover:bg-[#2c2e2f] flex items-center px-4 cursor-pointer'>
           <h1 className='text-2xl select-none'>Morse Decoder</h1>
         </div>
