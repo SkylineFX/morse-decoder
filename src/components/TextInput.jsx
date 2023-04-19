@@ -8,12 +8,13 @@ class TextInput extends React.Component {
 
     this.handleChange = this.handleChange.bind(this);
     this.playSound = this.playSound.bind(this);
-    this.openNotification = this.openNotification.bind(this)
-    this.timer = null;
+    this.openNotification = this.openNotification.bind(this);
+
+    this.timeout = null;
   }
 
   componentWillUnmount() {
-    clearTimeout(this.timer);
+    clearTimeout(this.timer)
   }
 
   handleChange(event) {
@@ -40,12 +41,13 @@ class TextInput extends React.Component {
       navigator.clipboard.writeText(text)
       this.props.onOpenNotification(true, text)
 
-      clearTimeout(this.timer);
-      this.timer = setTimeout(() => {
+      if(this.timeout) {
+        clearTimeout(this.timeout);
+        this.timeout = null;
+      }
+      this.timeout = setTimeout(() => {
         this.props.onOpenNotification(false)
       }, 5000);
-      
-      
     }
   }
 
