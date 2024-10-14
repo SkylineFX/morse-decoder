@@ -27,7 +27,7 @@ class Notification extends React.Component {
             </div>
           </div>
           <div className="">
-            <p className="text-sm">Text successfully copied:</p>
+            <p className="text-sm">Text copied:</p>
             <p className="italic truncate">{text}</p>
           </div>
         </div>

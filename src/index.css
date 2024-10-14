@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
 @layer components {
   .d-grid {
     background-color: #2c2e2f;
@@ -10,6 +9,6 @@
     grid-template-columns: repeat(auto-fit, minmax(104px, 1fr));
     gap: 0.25rem;
     padding: 0.25rem;
-    border-radius: 0.250rem;
+    border-radius: 0.25rem;
   }
 }

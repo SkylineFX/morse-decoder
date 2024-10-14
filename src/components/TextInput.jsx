@@ -4,17 +4,11 @@ import {play, stop} from '../sound'
 class TextInput extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {isPlaying: false};
+    this.state = {isPlaying: false, soundTimeout: 0, notificationTimeout: 0};
 
     this.handleChange = this.handleChange.bind(this);
     this.playSound = this.playSound.bind(this);
     this.openNotification = this.openNotification.bind(this);
-
-    this.timeout = null;
-  }
-
-  componentWillUnmount() {
-    clearTimeout(this.timer)
   }
 
   handleChange(event) {
@@ -22,32 +16,33 @@ class TextInput extends React.Component {
     this.props.onOpenNotification(false)
   }
 
-  playSound() {
-    if(!this.state.isPlaying)
-    {
-      play();
+  playSound(text) {
+    if(!this.state.isPlaying) {
+      clearTimeout(this.state.soundTimeout)
+      let duration = play(text);
       this.setState({isPlaying: true})
+
+      let timeout = setTimeout(() => {
+        this.setState({isPlaying: false})
+      }, duration * 1000);
+      this.state.soundTimeout = timeout
     }
-    else
-    {
+    else {
       stop();
       this.setState({isPlaying: false})
     }
   }
 
   openNotification(text) {
-    if(text)
-    {
+    if(text) {
       navigator.clipboard.writeText(text)
       this.props.onOpenNotification(true, text)
 
-      if(this.timeout) {
-        clearTimeout(this.timeout);
-        this.timeout = null;
-      }
-      this.timeout = setTimeout(() => {
+      clearTimeout(this.state.notificationTimeout);
+      let timeout = setTimeout(() => {
         this.props.onOpenNotification(false)
       }, 5000);
+      this.state.notificationTimeout = timeout
     }
   }
 
@@ -69,7 +64,7 @@ class TextInput extends React.Component {
           <p className='text-lg font-bold capitalize select-none'>{mode}</p>
           <div className='flex gap-2'>
             { mode === 'morse' &&
-            <button className='h-full hover:bg-[#2c2e2f] flex p-2 cursor-pointer' onClick={() => this.playSound()}>
+            <button className='h-full hover:bg-[#2c2e2f] flex p-2 cursor-pointer' onClick={() => this.playSound(text)}>
               {playButton}
             </button>
             }
